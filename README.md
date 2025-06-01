@@ -1,6 +1,6 @@
 
-# Ex.No:2 Develop an application that uses GUI Components with Fonts and Colors
-
+## Ex.No:2 Develop an application that uses GUI Components with Fonts and Colors
+Program to Develop an application that uses Font Size using Android Studio .
 
 ## AIM:
 To develop an application that uses GUI Components with Fonts and Colors using android studio.
@@ -41,126 +41,85 @@ Step 6:Close the Android project.
 
 
 ## Program:
- ```
-/*
-Program to Develop an application that uses Font Size using Android Studio .
-Developed by: Bakkiya lakshmi M
-RegisterNumber:  212222220006
-*/
-```
+
 
 ## MainActivity.java:
 ```
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
- 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="30dp"
-        android:gravity="center"
-        android:text="Hello World!"
-        android:textSize="25sp"
-        android:textStyle="bold" />
- 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:text="Change font size"
-        android:textSize="25sp" />
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:gravity="center"
-        android:text="Change color"
-        android:textSize="25sp" />
-</LinearLayout>
+package com.example.myapplication;
 
-
-```
-
-
-
-## activity_main.xml:
-```
-package com.example.demo;
-
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.graphics.Color;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    int ch=1;
-    float font=30;
+    float font = 24;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final TextView t= (TextView) findViewById(R.id.textView);
-        Button b1= (Button) findViewById(R.id.button1);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                t.setTextSize(font);
-                font = font + 5;
-                if (font == 50)
-                    font = 30;
+        final TextView t1 = (TextView)findViewById(R.id.textView1);
+        Button b1 = (Button)findViewById(R.id.button1);
+        b1.setOnClickListener(new View.OnClickListener()    {
+            public void onClick(View view) {
+                t1.setTextSize(font);
+                font = font+4;
+                if(font==40)
+                    font = 20;
             }
         });
-        Button b2= (Button) findViewById(R.id.button2);
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (ch) {
-                    case 1:
-                        t.setTextColor(Color.RED);
-                        break;
-                    case 2:
-                        t.setTextColor(Color.GREEN);
-                        break;
-                    case 3:
-                        t.setTextColor(Color.BLUE);
-                        break;
-                    case 4:
-                        t.setTextColor(Color.CYAN);
-                        break;
-                    case 5:
-                        t.setTextColor(Color.YELLOW);
-                        break;
-                    case 6:
-                        t.setTextColor(Color.MAGENTA);
-                        break;
-                }
-                ch++;
-                if (ch == 7)
-                    ch = 1;
-            }
-        });
-
 
     }
 }
 ```
 
+
+
+
+## activity_main.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="70dp"
+        android:gravity="center"
+        android:text="@string/hello_world"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="70dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:gravity="center"
+        android:text="@string/change_font_size"
+        tools:layout_editor_absoluteX="40dp"
+        tools:layout_editor_absoluteY="300dp" />
+
+
+</RelativeLayout>
+```
 ## Output:
-![image](https://github.com/user-attachments/assets/6d28f2fc-5d3f-49b3-b140-35498d426a75)
+
+![image](https://github.com/user-attachments/assets/ebbca4b3-b7d4-4a93-ab46-df21dab24f2a)
 
 
 
 ## Result:
 Thus, the program for android application, Font Size and color was executed successfully using Android Studio.
+
